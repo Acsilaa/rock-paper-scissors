@@ -14,9 +14,12 @@ divs = {
 }
 async function GetSetEHand() {
     let i = Math.floor(Math.random() * 3);
-    console.log(i);
-    let emove = Object.values(moves)[i];
-    $("#e").attr('src', './' + emove + '_hand.png');
+    let eMove = Object.values(moves)[i];
+    $("#e").attr('src', './' + eMove + '_hand.png');
+    return eMove;
+}
+async function GetResult(m1, m2){
+    
 }
 async function Hands(move){
     for(let i = 0; i < 3; i++){
@@ -29,7 +32,8 @@ async function Hands(move){
     }
     $('#p').attr('src', './' + move + '_hand.png');
 
-    await GetSetEHand();
+    let eMove = await GetSetEHand();
+    await GetResult(move, eMove);
 }
 
 async function RegisterClick(move){
