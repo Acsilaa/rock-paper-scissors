@@ -1,6 +1,9 @@
 :root{
     --move-h: 20em;
     --move-w: 33%;
+    --default-color: rgb(49, 49, 49);
+    --disabled-color: rgb(20, 20, 20);
+    --select-color: rgb(88, 88, 88);
 }
 *{
     user-select: none;
@@ -28,11 +31,12 @@ body{
     margin: .3em;
     width: var(--move-w);
     height: var(--move-h);
-    background-color: rgb(49, 49, 49);
+    background-color: var(--default-color);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 .move-t{
     font-size: 300%;
