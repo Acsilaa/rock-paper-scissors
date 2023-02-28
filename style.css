@@ -2,6 +2,9 @@
     --move-h: 20em;
     --move-w: 33%;
 }
+*{
+    user-select: none;
+}
 html{
     width: 100%;
 }
@@ -39,7 +42,6 @@ body{
     display: flex;
     height: var(--move-h);
     width: 100%;
-    background-color: red;
 }
 .side{
     width: 50%;
