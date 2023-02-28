@@ -19,7 +19,15 @@ async function GetSetEHand() {
     return eMove;
 }
 async function GetResult(m1, m2){
-    
+    let outcome;
+    if(m1 == m2) outcome = "draw";
+    if(m1 == moves.rock && m2 == moves.paper) outcome = 'lose';
+    if(m1 == moves.rock && m2 != moves.paper) outcome = 'win';
+    if(m1 == moves.scissors && m2 == moves.rock) outcome = 'lose';
+    if(m1 == moves.scissors && m2 != moves.rock) outcome = 'win';
+    if(m1 == moves.paper && m2 == moves.scissors) outcome = 'lose';
+    if(m1 == moves.paper && m2 != moves.scissors) outcome = 'win';
+    console.log(outcome);
 }
 async function Hands(move){
     for(let i = 0; i < 3; i++){
