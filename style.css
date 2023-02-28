@@ -35,3 +35,10 @@ body{
     font-size: 300%;
     font-family: Arial, Helvetica, sans-serif;
 }
+#sides{
+    display: flex;
+}
+.side{
+    width: 50%;
+    min-height: 20em;
+}
