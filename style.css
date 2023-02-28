@@ -4,7 +4,7 @@
     --default-color: rgb(39, 39, 39);
     --disabled-color: rgb(7, 7, 7);
     --select-color: rgb(58, 58, 58);
-    --anim-dur: 2s;
+    --anim-dur: .3s;
 }
 *{
     user-select: none;

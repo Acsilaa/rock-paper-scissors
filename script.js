@@ -12,10 +12,24 @@ divs = {
     paper : "#paper",
     scissors : "#scissors", 
 }
+async function GetSetEHand() {
+    let i = Math.floor(Math.random() * 3);
+    console.log(i);
+    let emove = Object.values(moves)[i];
+    $("#e").attr('src', './' + emove + '_hand.png');
+}
 async function Hands(move){
-    $('img').toggleClass('anim');
-    await delay($(':root').css('--anim-dur').replace("s", "000") * 1);
-    $('img').toggleClass('anim');
+    for(let i = 0; i < 3; i++){
+        $('img').addClass('anim');
+        await delay($(':root').css('--anim-dur').replace("s", "") * 1000 - 100);
+        $('img').removeClass('anim');
+        if(i == 2) break;
+        await delay(100);
+        $('img').addClass('anim');
+    }
+    $('#p').attr('src', './' + move + '_hand.png');
+
+    await GetSetEHand();
 }
 
 async function RegisterClick(move){
