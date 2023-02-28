@@ -37,8 +37,30 @@ body{
 }
 #sides{
     display: flex;
+    height: var(--move-h);
+    width: 100%;
+    background-color: red;
 }
 .side{
     width: 50%;
     min-height: 20em;
+    height: 100%;
+}
+#rock{
+    background-image: url('icons8-rock-100.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+#paper{
+    background-image: url('icons8-paper-100.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+#scissors{
+    background-image: url('icons8-scissor-96.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
 }
