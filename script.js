@@ -12,6 +12,10 @@ divs = {
     paper : "#paper",
     scissors : "#scissors", 
 }
+async function Hands(move){
+    $('img').toggleClass('anim');
+}
+
 async function RegisterClick(move){
     if(move == null || !canClick) return;
     canClick = false;
@@ -20,8 +24,8 @@ async function RegisterClick(move){
     }
     $(divs[move]).css('background-color', 'var(--select-color)');
 
-    await delay(900); // delete this
-    // await function that deals with the whole process
+    await Hands(move);
+
     for(let i = 0; i < Object.values(divs).length; i++){
         $(Object.values(divs)[i]).css('background-color', 'var(--default-color)');
     }

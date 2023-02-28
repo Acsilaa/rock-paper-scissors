@@ -1,9 +1,10 @@
 :root{
     --move-h: 20em;
     --move-w: 33%;
-    --default-color: rgb(49, 49, 49);
-    --disabled-color: rgb(20, 20, 20);
-    --select-color: rgb(88, 88, 88);
+    --default-color: rgb(39, 39, 39);
+    --disabled-color: rgb(7, 7, 7);
+    --select-color: rgb(58, 58, 58);
+    --anim-dur: 2s;
 }
 *{
     user-select: none;
@@ -69,4 +70,28 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
+}
+img{
+    width: 65%;
+    height: auto;
+    position: relative;
+}
+#enemy{
+    transform: rotateY(180deg);
+}
+
+img.anim{
+    animation-name: floating;
+    animation-duration: var(--anim-dur);
+}
+@keyframes floating{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-3em);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
