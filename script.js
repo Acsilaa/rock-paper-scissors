@@ -14,7 +14,7 @@ divs = {
 }
 async function Hands(move){
     $('img').toggleClass('anim');
-    await delay(2000);
+    await delay($(':root').css('--anim-dur').replace("s", "000") * 1);
     $('img').toggleClass('anim');
 }
 
