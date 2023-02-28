@@ -14,6 +14,8 @@ divs = {
 }
 async function Hands(move){
     $('img').toggleClass('anim');
+    await delay(2000);
+    $('img').toggleClass('anim');
 }
 
 async function RegisterClick(move){
