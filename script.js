@@ -12,22 +12,32 @@ divs = {
     paper : "#paper",
     scissors : "#scissors", 
 }
+Outcome = {
+    draw : "draw",
+    victory : 'victory',
+    defeat : 'defeat',
+}
 async function GetSetEHand() {
     let i = Math.floor(Math.random() * 3);
     let eMove = Object.values(moves)[i];
     $("#e").attr('src', './' + eMove + '_hand.png');
     return eMove;
 }
+function EndGame(o){
+    if(o == "victory");
+    if(o == "defeat");
+    if(o == "draw");
+}
 async function GetResult(m1, m2){
     let outcome;
     if(m1 == m2) outcome = "draw";
-    if(m1 == moves.rock && m2 == moves.paper) outcome = 'lose';
-    if(m1 == moves.rock && m2 != moves.paper) outcome = 'win';
-    if(m1 == moves.scissors && m2 == moves.rock) outcome = 'lose';
-    if(m1 == moves.scissors && m2 != moves.rock) outcome = 'win';
-    if(m1 == moves.paper && m2 == moves.scissors) outcome = 'lose';
-    if(m1 == moves.paper && m2 != moves.scissors) outcome = 'win';
-    console.log(outcome);
+    if(m1 == moves.rock && m2 == moves.paper) outcome = 'defeat';
+    if(m1 == moves.rock && m2 != moves.paper) outcome = 'victory';
+    if(m1 == moves.scissors && m2 == moves.rock) outcome = 'defeat';
+    if(m1 == moves.scissors && m2 != moves.rock) outcome = 'victory';
+    if(m1 == moves.paper && m2 == moves.scissors) outcome = 'defeat';
+    if(m1 == moves.paper && m2 != moves.scissors) outcome = 'victory';
+    EndGame(Outcome[outcome]);
 }
 async function Hands(move){
     for(let i = 0; i < 3; i++){
