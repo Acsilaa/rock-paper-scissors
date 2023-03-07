@@ -1,6 +1,8 @@
 async function delay(t){
     return new Promise(res => setTimeout(res, t));
 }
+let wins = 0;
+let losses = 0;
 let canClick = true;
 moves = {
     rock : "rock",
@@ -25,7 +27,11 @@ async function GetSetEHand() {
 }
 async function EndGame(o){
     _result = o.substr(0,1).toUpperCase()+o.substr(1);
+    if(o == "defeat") losses++;
+    if(o == "victory") wins++;
     $('.result').text(_result);
+    $('#pscore').text(wins);
+    $('#escore').text(losses);
     await delay(900);
     $('.result').text('');
 }
