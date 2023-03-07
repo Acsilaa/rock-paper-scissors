@@ -23,20 +23,21 @@ async function GetSetEHand() {
     $("#e").attr('src', './' + eMove + '_hand.png');
     return eMove;
 }
-function EndGame(o){
-    if(o == "victory");
-    if(o == "defeat");
-    if(o == "draw");
+async function EndGame(o){
+    _result = o.substr(0,1).toUpperCase()+o.substr(1);
+    $('.result').text(_result);
+    await delay(900);
+    $('.result').text('');
 }
 async function GetResult(m1, m2){
     let outcome;
-    if(m1 == m2) outcome = "draw";
     if(m1 == moves.rock && m2 == moves.paper) outcome = 'defeat';
     if(m1 == moves.rock && m2 != moves.paper) outcome = 'victory';
     if(m1 == moves.scissors && m2 == moves.rock) outcome = 'defeat';
     if(m1 == moves.scissors && m2 != moves.rock) outcome = 'victory';
     if(m1 == moves.paper && m2 == moves.scissors) outcome = 'defeat';
     if(m1 == moves.paper && m2 != moves.scissors) outcome = 'victory';
+    if(m1 == m2) outcome = "draw";
     EndGame(Outcome[outcome]);
 }
 async function Hands(move){
@@ -56,6 +57,8 @@ async function Hands(move){
 
 async function RegisterClick(move){
     if(move == null || !canClick) return;
+    $('#p').attr('src', './rock_hand.png');
+    $('#e').attr('src', './rock_hand.png');
     canClick = false;
     for(let i = 0; i < Object.values(divs).length; i++){
         $(Object.values(divs)[i]).css('background-color', 'var(--disabled-color)');
